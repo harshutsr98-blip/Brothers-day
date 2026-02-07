@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Brother’s Day 💙</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+body{
+  overflow:hidden;
+}
+
+/* ================= PAGES ================= */
+.page{
+  height:100vh;
+  width:100%;
+  position:absolute;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  transition:
+    transform 0.9s cubic-bezier(0.77,0,0.175,1),
+    opacity 0.9s ease;
+}
+
+/* PAGE 1 */
+#page1{
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+  transform:translateX(0);
+  opacity:1;
+  overflow:hidden;
+}
+
+/* PAGE 2 – SAME BG AS PAGE 1 */
+#letter{
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+  transform:translateX(100%);
+  opacity:0;
+  overflow:hidden;
+}
+
+#letter:target{
+  transform:translateX(0);
+  opacity:1;
+}
+
+#letter:target ~ #page1{
+  transform:translateX(-100%);
+  opacity:0;
+}
+
+/* ================= PAGE 1 HEARTS ================= */
+.heart{
+  position:absolute;
+  bottom:-20px;
+  font-size:18px;
+  opacity:0.5;
+  animation:floatUp linear infinite;
+}
+@keyframes floatUp{
+  to{transform:translateY(-110vh);opacity:0;}
+}
+
+/* ================= PAGE 2 EMOJI RAIN ================= */
+.rain-emoji{
+  position:absolute;
+  top:-40px;
+  font-size:26px;
+  opacity:0.8;
+  animation:emojiFall linear forwards;
+  pointer-events:none;
+}
+
+@keyframes emojiFall{
+  to{
+    transform:translateY(120vh) rotate(720deg);
+    opacity:0;
+  }
+}
+
+/* ================= CARDS ================= */
+.card{
+  background:rgba(255,255,255,0.12);
+  padding:40px;
+  width:90%;
+  max-width:420px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 15px 30px rgba(0,0,0,0.4);
+  backdrop-filter:blur(10px);
+  animation:fadeSlide 1.2s ease forwards;
+  opacity:0;
+}
+
+@keyframes fadeSlide{
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* LETTER CARD */
+.letter-card{
+  background:rgba(255,255,255,0.9);
+  padding:40px;
+  width:90%;
+  max-width:520px;
+  border-radius:20px;
+  box-shadow:0 20px 35px rgba(0,0,0,0.4);
+  animation:letterOpen 1s ease forwards;
+  transform:scale(0.9);
+  opacity:0;
+  z-index:2;
+  color:#333;
+}
+
+@keyframes letterOpen{
+  to{transform:scale(1);opacity:1;}
+}
+
+/* ================= TEXT ================= */
+h1{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  font-size:14px;
+  opacity:0.8;
+  margin-bottom:20px;
+}
+
+.letter-line{
+  font-size:16px;
+  line-height:1.8;
+  margin-bottom:18px;
+  opacity:0;
+  animation:textReveal 0.6s ease forwards;
+}
+
+.letter-line:nth-child(3){animation-delay:.5s;}
+.letter-line:nth-child(4){animation-delay:1s;}
+.letter-line:nth-child(5){animation-delay:1.5s;}
+.letter-line:nth-child(6){animation-delay:2s;}
+
+@keyframes textReveal{
+  to{opacity:1;}
+}
+
+/* SIGNATURE */
+.signature{
+  margin-top:25px;
+  font-family:'Segoe Script',cursive;
+  font-size:18px;
+  opacity:0;
+  animation:signatureFade .8s ease forwards;
+  animation-delay:2.6s;
+}
+
+@keyframes signatureFade{
+  to{opacity:1;}
+}
+
+/* ================= BUTTON ================= */
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 24px;
+  border-radius:30px;
+  background:#4fc3f7;
+  color:#0f2027;
+  font-weight:bold;
+  font-size:14px;
+  text-decoration:none;
+  animation:glow 2s infinite;
+}
+
+@keyframes glow{
+  0%{box-shadow:0 0 5px #4fc3f7;}
+  50%{box-shadow:0 0 20px #4fc3f7;}
+  100%{box-shadow:0 0 5px #4fc3f7;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 2 -->
+<div id="letter" class="page">
+
+  <div class="letter-card">
+    <h1>Dear Manish BSDK 😎</h1>
+    <div class="subtitle">for this reason she left you</div>
+
+    <p class="letter-line">
+      koi kuch bolay to 
+      try to trust them
+    </p>
+
+    <p class="letter-line">
+      Ab trust hua ya for kuch or karay?
+    </p>
+    
+    <div class="signature">
+      — Harshit Raj 🖕😂💙
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 1 -->
+<div id="page1" class="page">
+
+  <span class="heart" style="left:10%;animation-duration:7s;">💙</span>
+  <span class="heart" style="left:30%;animation-duration:9s;">💙</span>
+  <span class="heart" style="left:50%;animation-duration:6s;">💙</span>
+  <span class="heart" style="left:70%;animation-duration:8s;">💙</span>
+  <span class="heart" style="left:90%;animation-duration:10s;">💙</span>
+
+  <div class="card">
+    <h1>Happy Brother’s Day 💙</h1>
+    <p>Not everyone gets a brother like you… unfortunately 😏</p>
+    <a href="#letter" class="btn">World’s Best Brother 🏆</a>
+  </div>
+</div>
+
+<!-- ================= JS EMOJI RAIN ================= -->
+<script>
+/* 🖕😂 HEAVY & FAST EMOJI RAIN (PAGE 2 ONLY) */
+const rain = ["🖕","🖕","🖕","🖕","🖕","😂","🤣"];
+
+function createEmoji(){
+  const e = document.createElement("div");
+  e.className = "rain-emoji";
+  e.innerHTML = rain[Math.floor(Math.random()*rain.length)];
+  e.style.left = Math.random()*100 + "vw";
+  e.style.animationDuration = (1.2 + Math.random()*1.2) + "s";
+  document.getElementById("letter").appendChild(e);
+  setTimeout(()=>e.remove(),3000);
+}
+
+/* VERY HEAVY + FAST */
+setInterval(createEmoji,70);
+</script>
+
+</body>
+</html>
